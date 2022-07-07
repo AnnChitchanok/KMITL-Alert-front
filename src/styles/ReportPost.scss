@@ -1,0 +1,53 @@
+.post {
+    display:flex;
+    flex-direction: column-reverse;
+}
+.report-post {
+    margin        : 2rem 5rem;
+    cursor        : pointer;
+    transition    : 0.5s;
+    padding       : 10px 20px;
+    padding-bottom: 20px;
+    border-radius : 25px;
+    border-bottom : #ddd 2px solid;
+
+    .report-profile {
+        margin-right : 15px;
+        width        : 60px;
+        height       : 60px;
+        overflow     : hidden;
+        border-radius: 100%;
+        object-fit   : cover;
+
+        img {
+            width : auto;
+            height: 100%;
+        }
+    }
+
+    .text-area {
+        .name {
+            font-size  : 110%;
+            font-weight: bold;
+        }
+    }
+
+    .dates {
+        margin-left: 7rem;
+
+        .date-area {
+            margin-left: 5rem;
+        }
+    }
+}
+
+.report-post:hover {
+    background: rgba(0, 0, 0, 0.055);
+}
+
+.profile-name {
+    margin-top   : -20px;
+    padding      : 6px 30px;
+    border       : 2px solid black;
+    border-radius: 20px;
+}

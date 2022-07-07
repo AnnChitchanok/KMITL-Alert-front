@@ -1,0 +1,58 @@
+.bg-orange {
+    height: 100vh;
+    width : auto;
+    margin: auto;
+
+    .forms {
+        padding      : 30px;
+        border-radius: 20px;
+        margin       : 30px 0px;
+        background   : white;
+        box-shadow   : rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+        .forms-title {
+            font-size  : 130%;
+            text-align : left;
+            font-weight: bold;
+        }
+
+        .input {
+            margin-bottom: 10px;
+        }
+
+        .forget-password {
+            font-size : 100%;
+            text-align: left;
+        }
+
+        .error-message {
+            padding         : 10px;
+            color           : red;
+            background-color: #ffc4d1;
+            border          : solid 1px red;
+        }
+
+        .register {
+            display      : inline-block;
+            font-size    : 100%;
+            cursor       : pointer;
+            transition   : .5s;
+            padding      : 10px 20px;
+            border-radius: 10px;
+        }
+
+        .register:hover {
+            background: rgba(120, 194, 255, 0.158);
+        }
+
+        .btn {
+            padding      : 15px 10px;
+            border-radius: 10px;
+            background   : -webkit-linear-gradient(to bottom, #F39700, #f78c00);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background   : linear-gradient(to bottom, #F39700, #f78c00);
+            font-weight  : bold;
+            font-size    : 110%;
+        }
+    }
+}

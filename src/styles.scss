@@ -1,0 +1,92 @@
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+@font-face {
+    font-family: "FCIconicRegular";
+    src        : url("../public/fonts/FC-Iconic-Regular-ver-1.10.woff") format("woff");
+    font-weight: normal;
+    font-style : normal;
+}
+
+@font-face {
+    font-family: "FCIconicRegular";
+    src        : url("../public/fonts/FC-Iconic-SemiBold-ver-1.10.woff") format("woff");
+    font-weight: bold;
+    font-style : normal;
+}
+
+*{
+    font-family  : 'FCIconicRegular' !important;
+}
+body {
+    font-family  : 'FCIconicRegular' !important;
+    margin       : 0;
+    overflow-x   : hidden;
+    // background: rgb(9,130,207);
+    // background: linear-gradient(172deg, rgba(9,130,207,1) 0%, rgba(0,212,255,1) 100%);
+}
+
+#root {
+
+    background: #f39700;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #F39700, #eb5e33);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #F39700, #eb5e33);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.btn-primary {
+    background: #fc9700;
+    border    : none;
+    transition: .7s;
+}
+
+.btn-primary:hover {
+    background: #e48900;
+    border    : none;
+}
+
+.btn-primary:focus {
+    background: #fc9700;
+    border    : none;
+}
+
+.css-ghsjzk-MuiInputBase-root-MuiInput-root:after {
+    border-bottom: 2px solid #fc9700 !important;
+}
+
+.css-1c2i806-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+    color: #fc9700 !important;
+}
+
+.form-check-input:checked {
+    background-color: #fc9700;
+    border-color    : #fc9700;
+    transition      : .5s;
+}
+
+a {
+    color          : #fc9700;
+    text-decoration: none;
+}
+
+a:link {
+    color: #fc9700;
+}
+
+a:hover {
+    color          : #fc9700;
+    text-decoration: none;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+    border-radius: 20px !important;
+}

@@ -1,0 +1,99 @@
+.sidebar {
+    background: #fc9700;
+    width     : 400px;
+    height    : 100vh;
+    position  : absolute;
+    top       : 0;
+    left      : 0;
+
+    ul {
+        padding     : 0;
+        padding-left: 80px;
+        padding-top : 40px;
+
+        li {
+            position       : relative;
+            list-style-type: none;
+            padding-left   : 15px;
+            cursor         : pointer;
+
+            a {
+                color          : white;
+                font-size      : 130%;
+                text-decoration: none;
+                white-space    : normal;
+                text-decoration: none;
+
+                line-height : 60px;
+                padding-left: 20px;
+                transition  : .7s;
+
+                svg {
+                    margin-right: 20px;
+                }
+            }
+
+            a:hover {
+                padding-left: 40px;
+                opacity     : .4;
+            }
+
+            .type-alert {
+                margin-left: 3rem;
+
+                a {
+                    font-size: 110%;
+                }
+
+                a:hover {
+                    color      : #fc9700;
+                    margin-left: 2rem;
+                }
+
+                a.active {
+                    margin-left: 2rem;
+                }
+            }
+
+            .badge-alert {
+                background-color: red;
+                padding         : 0px 10px;
+                color           : white;
+                border-radius   : 50%;
+            }
+
+        }
+
+        .active {
+            background-color         : white;
+            border-top-left-radius   : 15px;
+            border-bottom-left-radius: 15px;
+
+            a {
+                padding-left: 40px;
+                opacity     : 1;
+                color       : #fc9700;
+            }
+        }
+
+        .active:after,
+        .active:before {
+            content : '';
+            position: absolute;
+            width   : 10px;
+            height  : 10px;
+            right   : 0px;
+        }
+
+        .active:after {
+            top       : -10px;
+            background: radial-gradient(circle at top left, #fc9700 10px, white 11px);
+        }
+
+        .active:before {
+            bottom    : -10px;
+            background: radial-gradient(circle at bottom left, #fc9700 10px, white 11px);
+        }
+
+    }
+}

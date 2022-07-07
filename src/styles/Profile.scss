@@ -1,0 +1,163 @@
+.profile-setting {
+    padding: 4rem 4rem;
+
+    .profile-display {
+        cursor: pointer;
+
+        .profile-img {
+            margin-right       : 25px;
+            position           : relative;
+            display            : inline-block;
+            width              : 150px;
+            height             : 150px;
+            border-radius      : 15px;
+            overflow           : hidden;
+            background-repeat  : no-repeat;
+            background-size    : cover;
+            background-position: center center;
+            object-fit         : cover;
+            border             : 1px solid #ddd;
+
+            .edit-btn {
+                width        : 40px;
+                height       : 40px;
+                background   : rgb(236, 69, 236);
+                text-align   : center;
+                color        : white;
+                padding      : 5px;
+                border-radius: 7px;
+                margin-left  : -15px;
+                margin-top   : 100px;
+            }
+        }
+
+        .profile-img:before {
+            font-family     : 'Font Awesome 5 Free';
+            content         : '\f093';
+            font-size       : 190%;
+            position        : absolute;
+            padding-top     : 80px;
+            top             : 50%;
+            left            : 50%;
+            transform       : translate(-50%, -50%);
+            text-align      : center;
+            color           : #fff;
+            font-weight     : bold;
+            width           : 200px;
+            height          : 200px;
+            border-radius   : 50%;
+            opacity         : 0;
+            transition      : .5s ease;
+            background-color: rgba(255, 255, 255, 0.5);
+            border          : 1px solid #f3f3f3;
+        }
+
+        .profile-img:hover:before {
+            opacity: 1;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .edit-profile-img {
+            position        : relative;
+            width           : 30px;
+            height          : 30px;
+            border-radius   : 10px;
+            padding-left    : 2px;
+            background-color: rgb(172, 82, 199);
+            color           : white;
+            font-size       : 70% !important;
+            bottom          : 35px;
+            left            : 115px;
+
+            svg {
+                position : relative;
+                font-size: 15pt !important;
+                left     : 3px !important;
+                top      : 5px;
+            }
+        }
+    }
+
+    .profile-name {
+        .display-name {
+            font-size  : 130%;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .activity-time {
+            font-size: 90%;
+            color    : gray;
+        }
+    }
+
+    .btn-logout {
+        background   : rgb(255, 57, 90);
+        padding      : 10px 40px;
+        margin-top   : 50px;
+        color        : white;
+        border-radius: 15px;
+        box-shadow   : 0 10px 10px rgba(255, 57, 90, 0.5);
+        cursor       : pointer;
+        transition   : .5s;
+    }
+
+    .btn-logout:hover {
+        background: rgb(224, 49, 78);
+        box-shadow: 0 15px 15px rgba(255, 57, 90, 0.5);
+    }
+
+    .icon {
+        background   : #f39700;
+        /* fallback for old browsers */
+        background   : -webkit-linear-gradient(to bottom, #F39700, #eb5e33);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background   : linear-gradient(to bottom, #F39700, #eb5e33);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        border-radius: 10px;
+        padding      : 10px 20px;
+        display      : block;
+        color        : white;
+        align-items  : center;
+        text-align   : center;
+
+        svg {
+            margin-right   : 0 !important;
+            vertical-align : center;
+            align-items    : center;
+            display        : flex;
+            justify-content: center;
+            margin         : auto;
+        }
+    }
+
+    .text {
+        margin-left: 10px;
+        font-size  : 120%;
+    }
+}
+
+
+.profile-area {
+    .profile-img {
+        margin       : auto;
+        width        : 100px;
+        height       : 100px;
+        overflow     : hidden;
+        border-radius: 100%;
+        object-fit   : cover;
+
+        img {
+            width : auto;
+            height: 100%;
+        }
+    }
+}
+
+.forgot-btn{
+    color: #f39700;
+    cursor: pointer;
+}
