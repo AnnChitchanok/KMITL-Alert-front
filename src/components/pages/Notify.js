@@ -74,7 +74,7 @@ function Notify() {
   };
   useEffect(() => {
     loadAvartar();
-    loadRadioData();
+    //loadRadioData();
   }, []);
 
   if (!currentUser) {
@@ -122,7 +122,7 @@ function Notify() {
     const data = {
       userId: currentUser.uid, //userid
       message: report, //report "เก็บข้อความ"
-      typeId: type, //type เก็บเป็นไอดี
+      //typeId: type, //type เก็บเป็นไอดี
       time: addZero(time.getHours()) + ":" + addZero(time.getMinutes()), //เวลา
       date: date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate(), // วันที่
       lat: lat,
@@ -158,10 +158,9 @@ function Notify() {
               className="profile-img d-flex align-items-center"
               style={{
                 backgroundImage: `url(${image})`,
-                backgroundSize: "cover"
+                backgroundSize: "cover",
               }}
-            >
-            </div>
+            ></div>
             <div className="name mt-3" style={{ fontSize: "130%" }}>
               {localStorage.getItem("Username")}
             </div>

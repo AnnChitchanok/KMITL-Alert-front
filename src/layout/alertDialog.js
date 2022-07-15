@@ -9,8 +9,8 @@ import axios from "axios";
 import dateTransform from "../utils/utils";
 import { AuthContext } from "../components/Auth/Auth";
 import { useHistory } from "react-router-dom";
-import CircularProgress from '@mui/material/CircularProgress';
-import Skeleton from '@mui/material/Skeleton';
+import CircularProgress from "@mui/material/CircularProgress";
+import Skeleton from "@mui/material/Skeleton";
 
 const AnotherMark = (props) => {
   const { post } = props;
@@ -45,7 +45,7 @@ const AlertDialog = (props) => {
       .catch((err) => {
         console.log(err);
       });
-  }
+  };
 
   const loadAvatar = () => {
     axios
@@ -56,37 +56,49 @@ const AlertDialog = (props) => {
       .catch((err) => {
         console.log(err);
       });
-  }
+  };
 
   useEffect(() => {
-    loadType();
+    //loadType();
     loadAvatar();
     setTimeout(() => {
       setLoading(true);
-    }, 700)
+    }, 700);
   }, []);
 
   const goToViewDirection = (id) => {
     history.push("/viewDirection/" + id);
-  }
+  };
 
   return (
-    <div className="alert-area d-flex justify-content-between p-3" style={{ width: "100%", height: "700px" }}>
-      <div className="left d-flex" style={{ width: "50%", marginRight: "50px" }}>
+    <div
+      className="alert-area d-flex justify-content-between p-3"
+      style={{ width: "100%", height: "700px" }}
+    >
+      <div
+        className="left d-flex"
+        style={{ width: "50%", marginRight: "50px" }}
+      >
         <div className="top">
           <div className="profile d-flex align-items-center">
             {loading ? (
               <div>
-                <div className="img border"
+                <div
+                  className="img border"
                   style={{
                     backgroundImage: `url(${userData.avartar})`,
                     backgroundSize: "cover",
-                    borderRadius: "100%"
-                  }}>
-                </div>
+                    borderRadius: "100%",
+                  }}
+                ></div>
               </div>
             ) : (
-              <Skeleton animation="wave" variant="circular" width={100} height={100} />
+              <Skeleton
+                animation="wave"
+                variant="circular"
+                width={100}
+                height={100}
+              />
             )}
             {/* <div
               className="profile-img d-flex align-items-center border"
@@ -101,8 +113,20 @@ const AlertDialog = (props) => {
               </div>
             ) : (
               <div>
-                <Skeleton variant="text" animation="wave" height={30} width={200} style={{ marginLeft: "20px" }} />
-                <Skeleton variant="text" animation="wave" height={20} width={150} style={{ marginLeft: "20px" }} />
+                <Skeleton
+                  variant="text"
+                  animation="wave"
+                  height={30}
+                  width={200}
+                  style={{ marginLeft: "20px" }}
+                />
+                <Skeleton
+                  variant="text"
+                  animation="wave"
+                  height={20}
+                  width={150}
+                  style={{ marginLeft: "20px" }}
+                />
               </div>
             )}
           </div>
@@ -128,9 +152,27 @@ const AlertDialog = (props) => {
             </>
           ) : (
             <>
-              <Skeleton variant="text" animation="wave" height={20} width={150} style={{ marginTop: "1.5rem" }} />
-              <Skeleton variant="text" animation="wave" height={20} width={200} style={{ marginTop: "3rem" }} />
-              <Skeleton variant="text" animation="wave" height={20} width={250} style={{ marginTop: "1rem" }} />
+              <Skeleton
+                variant="text"
+                animation="wave"
+                height={20}
+                width={150}
+                style={{ marginTop: "1.5rem" }}
+              />
+              <Skeleton
+                variant="text"
+                animation="wave"
+                height={20}
+                width={200}
+                style={{ marginTop: "3rem" }}
+              />
+              <Skeleton
+                variant="text"
+                animation="wave"
+                height={20}
+                width={250}
+                style={{ marginTop: "1rem" }}
+              />
             </>
           )}
         </div>
@@ -148,7 +190,7 @@ const AlertDialog = (props) => {
         <div style={{ height: "100%", width: "100%" }} className="pe-3 ps-3">
           <GoogleMapReact
             bootstrapURLKeys={{
-              key: "AIzaSyBD2YlPgnsg5xEvhuDUYiczcUNsOl7EmRk"
+              key: "AIzaSyBD2YlPgnsg5xEvhuDUYiczcUNsOl7EmRk",
             }}
             defaultCenter={{ lat: data.lat, lng: data.lng }}
             defaultZoom={18}

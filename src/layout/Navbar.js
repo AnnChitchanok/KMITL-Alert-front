@@ -1,4 +1,4 @@
-import React, { useState,useEffect,useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "../styles/Sidebar.scss";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import BarChartIcon from "@mui/icons-material/BarChart";
@@ -26,10 +26,10 @@ function Navbar() {
   const [crime, setCrime] = useState(false);
 
   // realtimeDataBase
-  const [alerts , setAlers] = useState();
-  const {currentUser} = useContext(AuthContext);
-  const [total_notify , setTotal] = useState(0);
-  const [dataUsers , setDataUsers] = useState();
+  const [alerts, setAlers] = useState();
+  const { currentUser } = useContext(AuthContext);
+  const [total_notify, setTotal] = useState(0);
+  const [dataUsers, setDataUsers] = useState();
 
   function gotoAlertLink() {
     setAlertLink(true);
@@ -78,34 +78,34 @@ function Navbar() {
   }
 
   const loadNotify = () => {
-    axios.get("http://localhost:8080/api/alerts/")
-    .then( async (res) => {
-      onSnapshot(doc(db, "users", currentUser.uid), (doc) => {
-        setTotal(res.data.length - doc.data().alerts);
+    axios
+      .get("http://localhost:8080/api/alerts/")
+      .then(async (res) => {
+        onSnapshot(doc(db, "users", currentUser.uid), (doc) => {
+          setTotal(res.data.length - doc.data().alerts);
+        });
+        setAlers(res.data.length);
+      })
+      .catch((err) => {
+        console.log(err);
       });
-      setAlers(res.data.length);
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-  }
+  };
 
   const updateAlerts = () => {
     const data = {
-      alerts: alerts
-    }
-    axios.put("http://localhost:8080/api/user/" + currentUser.uid , data)
-    .then((res) => {
-
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-  }
+      alerts: alerts,
+    };
+    axios
+      .put("http://localhost:8080/api/user/" + currentUser.uid, data)
+      .then((res) => {})
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   useEffect(() => {
     loadNotify();
-  },[])
+  }, []);
 
   return (
     <div className="sidebar">
@@ -129,12 +129,14 @@ function Navbar() {
           <a onClick={() => gotoReportLink()}>
             {" "}
             <BarChartIcon />
-            รายงาน 
+            รายงาน
             {total_notify ? (
-              <span class="badge-alert">{total_notify}</span>
-            ):""}
+              <span className="badge-alert">{total_notify}</span>
+            ) : (
+              ""
+            )}
           </a>
-        </li> 
+        </li>
         <li
           onClick={() => gotoProfileLink()}
           className={profileLink ? "active" : ""}

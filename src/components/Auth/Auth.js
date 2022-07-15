@@ -34,7 +34,7 @@ export const AuthProvider = ({ children }) => {
 
     }, [currentUser]);
 
-    if (loading) {
+    if (!currentUser && !positions) {
         return <CircularProgress className='progress' />;
     }
 

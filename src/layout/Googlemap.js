@@ -42,12 +42,7 @@ const AnotherMark = (props) => {
 };
 
 function Googlemap({ loadPosition, loadDialog }) {
-  console.log('AuthContext', AuthContext);
-  const resAuthContext = useContext(AuthContext);
-  console.log('resAuthContext', resAuthContext);
-  // const { currentUser, positions } = useContext(AuthContext);
-  const { currentUser, positions } = resAuthContext;
-  console.log('positionsfffffffff', positions)
+  const { currentUser, positions } = useContext(AuthContext);
 
   const LAT = positions.coords.latitude;
   const LNG = positions.coords.longitude;
@@ -57,7 +52,6 @@ function Googlemap({ loadPosition, loadDialog }) {
 
   const [data, setData] = useState();
 
-
   const getLatLng = (event) => {
     setLat(event.lat);
     setLng(event.lng);
@@ -66,23 +60,22 @@ function Googlemap({ loadPosition, loadDialog }) {
 
   const onClickMark = (TheMark) => {
     loadDialog(TheMark);
-  };  
+  };
 
   const LoadData = () => {
     axios
-    .get("http://localhost:8080/api/alerts")
-    .then((res) => {
-      setData(res.data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-  }
+      .get("http://localhost:8080/api/alerts")
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   useEffect(() => {
     LoadData();
   }, []);
-
 
   return (
     <div style={{ height: "83vh", width: "100%" }} className="pe-3 ps-3">
@@ -93,18 +86,17 @@ function Googlemap({ loadPosition, loadDialog }) {
         onClick={getLatLng}
         yesIWantToUseGoogleMapApiInternals
       >
-        <MyMark lat={lat} lng={lng} text="ฉัน" 
-        />
+        <MyMark lat={lat} lng={lng} text="ฉัน" />
         {data
           ? data.map((post, index) => (
-            <AnotherMark
-              key={index}
-              lat={post.lat}
-              lng={post.lng}
-              post={post}
-              onClickMark={onClickMark}
-            />
-          ))
+              <AnotherMark
+                key={index}
+                lat={post.lat}
+                lng={post.lng}
+                post={post}
+                onClickMark={onClickMark}
+              />
+            ))
           : ""}
       </GoogleMapReact>
     </div>

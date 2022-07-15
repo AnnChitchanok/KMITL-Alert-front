@@ -63,7 +63,6 @@ function Profile() {
         axios
             .get("http://localhost:8080/api/user/" + id)
             .then((res) => {
-                console.log('res.data', res.data);
                 setUser(res.data);
                 // console.log(currentUser);
                 // console.log(res.data);
