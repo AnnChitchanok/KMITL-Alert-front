@@ -29,7 +29,7 @@ function ViewDirection() {
 
   const loadData = () => {
     axios
-      .get("http://localhost:8080/api/alert/" + alertId)
+      .get("http://localhost:4050/api/alert/" + alertId)
       .then((res) => {
         setData(res.data);
       })
@@ -40,7 +40,7 @@ function ViewDirection() {
 
   //   const loadType = (id) => {
   //     axios
-  //       .get("http://localhost:8080/api/type/" + id)
+  //       .get("http://localhost:4050/api/type/" + id)
   //       .then((res) => {
   //         setTypeName(res.data);
   //       })
@@ -51,7 +51,7 @@ function ViewDirection() {
 
   const loadUserData = (id) => {
     axios
-      .get("http://localhost:8080/api/user/" + id)
+      .get("http://localhost:4050/api/user/" + id)
       .then((res) => {
         setUserData(res.data);
       })

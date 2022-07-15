@@ -64,7 +64,7 @@ function Googlemap({ loadPosition, loadDialog }) {
 
   const LoadData = () => {
     axios
-      .get("http://localhost:8080/api/alerts")
+      .get("http://localhost:4050/api/alerts")
       .then((res) => {
         setData(res.data);
       })

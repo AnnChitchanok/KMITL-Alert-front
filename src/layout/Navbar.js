@@ -79,7 +79,7 @@ function Navbar() {
 
   const loadNotify = () => {
     axios
-      .get("http://localhost:8080/api/alerts/")
+      .get("http://localhost:4050/api/alerts/")
       .then(async (res) => {
         onSnapshot(doc(db, "users", currentUser.uid), (doc) => {
           setTotal(res.data.length - doc.data().alerts);
@@ -96,7 +96,7 @@ function Navbar() {
       alerts: alerts,
     };
     axios
-      .put("http://localhost:8080/api/user/" + currentUser.uid, data)
+      .put("http://localhost:4050/api/user/" + currentUser.uid, data)
       .then((res) => {})
       .catch((err) => {
         console.log(err);

@@ -46,12 +46,12 @@ function Register() {
         displayName: registerUsername,
         avartar: "public/img/avatar.png",
         status: "",
-        alerts: 0
+        alerts: 0,
       };
 
       // create user
       axios
-        .post("http://localhost:8080/api/auth/signup", docData)
+        .post("http://localhost:4050/api/auth/signup", docData)
         .then((res) => {
           console.log(res.data);
           registered();

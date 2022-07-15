@@ -53,7 +53,7 @@ function Notify() {
 
   const loadRadioData = () => {
     axios
-      .get("http://localhost:8080/api/types")
+      .get("http://localhost:4050/api/types")
       .then((res) => {
         setDataType(res.data);
       })
@@ -64,7 +64,7 @@ function Notify() {
 
   const loadAvartar = () => {
     axios
-      .get("http://localhost:8080/api/user/" + currentUser?.uid)
+      .get("http://localhost:4050/api/user/" + currentUser?.uid)
       .then((res) => {
         setImage(res.data.avartar);
       })
@@ -132,7 +132,7 @@ function Notify() {
     };
 
     axios
-      .post("http://localhost:8080/api/alert", data)
+      .post("http://localhost:4050/api/alert", data)
       .then((res) => {
         console.log(res.data);
       })

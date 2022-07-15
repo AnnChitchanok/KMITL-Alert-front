@@ -38,7 +38,7 @@ const AlertDialog = (props) => {
 
   const loadType = () => {
     axios
-      .get("http://localhost:8080/api/type/" + data.typeId)
+      .get("http://localhost:4050/api/type/" + data.typeId)
       .then((res) => {
         setTypeName(res.data);
       })
@@ -49,7 +49,7 @@ const AlertDialog = (props) => {
 
   const loadAvatar = () => {
     axios
-      .get("http://localhost:8080/api/user/" + data.userId)
+      .get("http://localhost:4050/api/user/" + data.userId)
       .then((res) => {
         setUserData(res.data);
       })

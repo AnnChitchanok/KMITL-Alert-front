@@ -17,7 +17,7 @@ function Reportpost(props) {
   useEffect(() => {
     setLoading(false);
     axios
-      .get("http://localhost:8080/api/user/" + rpPost.userId)
+      .get("http://localhost:4050/api/user/" + rpPost.userId)
       .then((res) => {
         setUserData(res.data);
         console.log(res.data);
